@@ -1,29 +1,29 @@
-function exampleOne(numberValue) {
-    // sequence 1
-    // 매개변수가 정수인지 확인하는 함수 integerCheck()
-    function integerCheck(data) {
-        if(Number.isInteger(data) === true) {
-            return data;
-        } else {
-            return new Error('이 함수는 정수여야 합니다');
-        }
-    }
-    // sequence 2
-    function innerOne(one) {
-        return one + 1;
-    }
-    // sequence 3
-    function innerTwo(two) {
-        return two + 2;
-    }
-    // sequence 4
-    function innerThree(three) {
-        return three + 3;
-    }
-    // sequence 5
-    function innerFour(four) {
-        return four + 4;
-    }
+// function exampleOne(numberValue) {
+//     // sequence 1
+//     // 매개변수가 정수인지 확인하는 함수 integerCheck()
+//     function integerCheck(data) {
+//         if(Number.isInteger(data) === true) {
+//             return data;
+//         } else {
+//             return new Error('이 함수는 정수여야 합니다');
+//         }
+//     }
+//     // sequence 2
+//     function innerOne(one) {
+//         return one + 1;
+//     }
+//     // sequence 3
+//     function innerTwo(two) {
+//         return two + 2;
+//     }
+//     // sequence 4
+//     function innerThree(three) {
+//         return three + 3;
+//     }
+//     // sequence 5
+//     function innerFour(four) {
+//         return four + 4;
+//     }
 
 // sequence가 1, 2, 3, 4, 5 순서로 실행되야 함
 // 내부 함수 inner 시리즈를 순서대로 실행시켜
@@ -35,7 +35,36 @@ function exampleOne(numberValue) {
 
 // 난이도 중급 : 해당 코드를 콜백지옥으로 처리하면 어떻게 작성 될까요?
 // 결과는 20입니다
+function exampleOne(numberValue) {
+    // sequence 1
+    // 매개변수가 정수인지 확인하는 함수 integerCheck()
+    function integerCheck(data) {
+        if(Number.isInteger(data) === true) {
+            return data;
+        } else {
+            return new Error('이 함수는 정수여야 합니다');
+        }
+    }
+    // sequence 2
+    let result = "";
+    function innerOne(one) {
+        one + 1;
+        function innerTwo(two) {
+            two + 2;
+            function innerThree(three) {
+                three + 3;
+                function innerFour(four) {
+                    result = four + 4;
+                }
+            }
+        } return result;
+    }
+    // sequence 3
 
+    // sequence 4
+   
+    // sequence 5
+    
 // 난이도 고급 : 해당 코드를 Promise로 처리하면 어떻게 작성 될까요?
 // async/await로 처리하면 어떻게 작성 될까요?
 
